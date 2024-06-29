@@ -1,0 +1,308 @@
+.TH steganoai 1 "2024" "GPL" "SteganoAI"
+.SH NAME
+steganoai - The script was created to allow you to hide and send secret messages in photos. Additionally, ChatGPT was used to facilitate the entire process.
+.SH SYNOPSIS
+.B bash main.sh
+.SH DESCRIPTION
+.PP
+After running the script, select the option you are interested in (1 of 4):
+.RS 
+1. Hide information
+.br
+2. Extract information
+.br
+3. Send information
+.br
+4. Exit
+.RE
+.PP
+.BR "1) Hide information"
+.br
+After selecting the option, the following menu will appear:
+.RS
+1. Generate image using ChatGPT
+.br
+2. Select image path
+.br
+3. Select path to message to hide
+.br
+4. Select output directory
+.br
+5. Hide information
+.br
+6. Send information
+.br
+7. Back
+.PP
+.BR "1) Generate image using ChatGPT"
+.br
+After selecting the option, the following menu will appear:
+.RS
+1. Set chatgpt api
+.br
+2. Set image output directory
+.br
+3. Set chatgpt prompt
+.br
+4. Generate image
+.br
+5. Back
+.PP
+.BR "1) Set chatgpt api"
+.br
+Set your ChatGPT API if you want to generate an image.
+.br
+You can find your key here: https://platform.openai.com/account/api-keys
+.PP
+.BR "2) Set image output directory"
+.br
+Set directory with filename.extension where the generated image will be saved.
+.br
+Supported image extensions: .jpg .png
+.br
+Example directory: /home/image.png
+.PP
+.BR "3) Set chatgpt prompt"
+.br
+Set a prompt that will be sent to chatgpt (it will generate a photo based on it).
+.PP
+.BR "4) Generate image"
+.br
+if you have provided all the required options, after selecting this it will start generating the image via ChatGPT.
+.PP
+.BR "5) Back"
+.br
+Back to previous menu
+.PP
+.RE
+.BR "2) Select image path"
+.br
+Set the path to the photo in which the information will be hidden.
+.br
+Example path:
+.br
+Supported image extensions: .jpg .png
+.br
+Example path: /home/image.png
+.PP
+.BR "3) Select path to message to hide"
+.br
+Set the path to the file with the message that will be hidden in the photo.
+.br
+Supported file extensions: .txt
+.br
+Example path: /home/message.txt
+.PP
+.BR "4) Select output directory"
+.br
+Set path to output image, where will be saved image with hidden message.
+.br
+Supported file extensions: .png
+.br
+Example path: /home/image_with_hidden_message.png
+.PP
+.BR "5) Hide information"
+.br
+If all required options have been set, once you press this, the process of hiding information from the photo will begin.
+.PP
+.BR "6) Send information"
+.br
+See:
+.BR "3) Send information"
+.PP
+.BR "7) Back"
+.br
+Back to previous menu
+.RE
+.PP
+.BR "2) Extract information"
+.br
+After selecting the option, the following menu will apear:
+.RS
+1. Download unreaded emails
+.br
+2. Extract data from downloaded images
+.br
+3. Select image to Extract
+.br
+4. Select output directory
+.br
+5. Extract information
+.br
+6. Back
+.PP
+.BR "1) Download unreaded emails"
+.br
+If you provided your email and application password in section
+.BR "3) Send information",
+then this option will download all unreaded images from your email.
+See config.sh if u want to change the number of fetched emails by clicking once this option.
+.PP
+.BR "2) Extract data from downloaded images"
+.br
+This option will extract information from all images in folder ./download
+.PP
+.BR "3) Select image to extract"
+.br
+Set path to image, from which data will be extracted.
+.br
+Supported image extensions: .png
+.br
+Example path: /home/image_to_extract.png
+.PP
+.BR "4) Select output directory"
+.br
+Set path to output file, in which extracted data will be saved.
+.br
+Supported file extensions: .txt
+.br
+Example path: /home/extracted_data.txt
+.PP
+.BR "5) Extract information"
+.br
+If all required options are provided, then this option will extract
+message from selected image.
+.PP
+.BR "6) Back"
+.br
+Back to previous menu
+.RE
+.PP
+.BR "3) Send information"
+.br
+After selection this option the following menu will appear:
+.RS
+1. Generate message using chatgpt
+.br
+2. Set your email
+.br
+3. Set app password
+.br
+4. Set recipient email
+.br
+5. Set path to email to send
+.br
+6. Set path to attachment
+.br
+7. Send email
+.br
+8. Back
+.PP
+.BR "1) Generate message using chatgpt"
+.br
+After selecting this option, the following menu will apear:
+.RS
+1. Set chatgpt api key.
+.br
+2. Set message output directory.
+.br
+3. Set chat gpt.
+.br
+4. Generate message
+.br
+5. Exit
+.PP
+.BR "1) Set chatgpt api key"
+.br
+Set your ChatGPT API if you want to generate a message.
+.br
+You can find your key here: https://platform.openai.com/account/api-keys
+.PP
+.BR "2) Set message output directory"
+.br
+Set output path, where the generated message will be saved.
+.br
+Supported extensions: .txt
+.br
+Example path: /home/email_to_send.txt
+.PP
+.BR "3) Set chatgpt prompt"
+.br
+Set a prompt based on which chatgpt will generate a message. By default, it assumes that the email will include an attachment.
+.PP
+.BR "4) Generate message"
+.br
+If all required options are provided, then this option will start generating a message.
+.PP
+.BR "5) Back"
+.br
+Back to previous menu
+.RE
+.PP
+.BR "2) Set your email"
+.br
+Set your email address.
+.br
+Supported email providers: Gmail
+.PP
+.BR "3) Set app password"
+.br
+Set app password to email
+.br
+Supported email providers: Gmail
+.br
+You need to enable 'Less secure app access' in your Gmail account settings to send emails using Gmail or change the script to work with other email providers.
+.br
+https://knowledge.workspace.google.com/kb/how-to-create-app-passwords-000009237
+.PP
+.BR "4) Set recipient email"
+.br
+Set recipient email
+.br
+Supported email providers: Gmail
+.PP
+.BR "5) Set path to email to send"
+.br
+Set path to file, which will be send. It should be in correspoding format:
+.RS
+- First line: Subject: 
+.br
+- After email subject, new line should be added
+.br
+- Everything below new line will be interpreted as a email body
+.RE
+.PP
+.BR "6) Set path to attachment"
+.br
+Set path to image, wich will be attached to the email. (It will work, if you don't provide any.)
+.PP
+.BR "7) Send email"
+.br
+If all required options are provided, then after selecting this option, script will ask you if
+you are sure to send this mail.
+.br
+Enter y if YES, n if NO.
+.br
+If you select y, then sending email process will start.
+.br
+If you select n, then it will cancel sending email.
+.PP
+.BR "8) Back"
+.br
+Back to previous menu
+.RE
+.PP
+.BR "4) Exit"
+.br
+Exit the script
+.SH OPTIONS
+.BR "-v --version"
+- print the current version of the script
+.br
+.BR "-h --help"
+- print "help" for this script
+.SH AUTHOR
+.BR "Kamil Raubo"
+.SH REPORTING BUGS
+If you found a bug, feel free to contact me:
+.BR "s198328@student.pg.edu.pl"
+.SH COPYRIGHTS
+Licensed under GPL (see /usr/share/common-licenses/GPL for more details
+or contact # the Free Software Foundation for a copy)
+.SH FILES
+.BR "config.sh"
+is storing the conifg of the script.
+.br
+.BR "tools/*"
+you can find here scipts written in python, which are used by the steganoai.
+
